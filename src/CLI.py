@@ -4,16 +4,16 @@ from calculator import add, subtract, multiply, divide
 
 
 @click.command()
-@click.argument('operation')
-@click.argument('num1', type=float)
-@click.argument('num2', type=float, required=False)
+@click.argument("operation")
+@click.argument("num1", type=float)
+@click.argument("num2", type=float, required=False)
 def calculate(operation, num1, num2=None):
     """Simple calculator CLI"""
 
     try:
-        if operation == 'add':
+        if operation == "add":
             result = add(num1, num2)
-        elif operation == 'subtract':
+        elif operation == "subtract":
             result = subtract(num1, num2)
         else:
             click.echo(f"Unknown operation: {operation}")
@@ -33,5 +33,5 @@ def calculate(operation, num1, num2=None):
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     calculate()
